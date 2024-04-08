@@ -5,43 +5,33 @@ const downloadBtn = document.getElementById("download-btn");
 
 const image = new Image();
 image.src = "Main.png";
-image.onload = function () {
-  drawImage();
-};
-
-//var textWidth = ctx.measureText(nameInput).width
+image.onload = drawImage;
 
 function drawImage() {
-  // ctx.clearRect(0, 0, canvas.width, canvas.height)
+  // Clear the canvas before drawing (optional for some scenarios)
+  // ctx.clearRect(0, 0, canvas.width, canvas.height);
+
   ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
   ctx.font = "30px open sans";
   ctx.fillStyle = "#FFFFFF";
   ctx.textBaseline = "middle";
   ctx.textAlign = "center";
 
-  ctx.fillText(nameInput.value, canvas.width / 2, 841.8);
+  // Get the actual text width for better centering
+  const textWidth = ctx.measureText(nameInput.value).width;
+
+  // Center the text horizontally using textWidth
+  ctx.fillText(nameInput.value, canvas.width / 2 - textWidth / 2, 841.8);
 }
 
-ctx.fillText(nameInput.value, canvas.height / 2, 232.3);
-}
-
-nameInput.addEventListener("input", function () {
-  drawImage();
-});
+nameInput.addEventListener("input", drawImage);
 
 downloadBtn.addEventListener("click", download);
 
 function download() {
-  const image = canvas.toDataURL();
+  const imageData = canvas.toDataURL("image/png", 1.0); // Use high quality PNG
   const link = document.createElement("a");
-  link.href = image;
+  link.href = imageData;
   link.download = "Ied Greeting Card - " + nameInput.value;
   link.click();
 }
-
-//downloadBtn.addEventListener("click", function () {
-//downloadBtn.href = canvas.toDataURL("image/png", 1);
-//downloadBtn.download = "Ied Greeting Card - " + nameInput.value;
-// console.log(downloadBtn.href);
-//downloadBtn.click();
-//});
