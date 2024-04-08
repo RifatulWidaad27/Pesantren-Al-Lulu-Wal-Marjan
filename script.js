@@ -4,7 +4,7 @@ const nameInput = document.getElementById("name");
 const downloadBtn = document.getElementById("download-btn");
 
 const image = new Image();
-image.src = "Gambar WhatsApp 2024-04-08 pukul 20.54.10_50160399.jpg";
+image.src = "Poster";
 image.onload = function () {
   drawImage();
 };
