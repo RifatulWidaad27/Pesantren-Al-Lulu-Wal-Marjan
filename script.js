@@ -15,7 +15,7 @@ function drawImage() {
   // ctx.clearRect(0, 0, canvas.width, canvas.height)
   ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
   ctx.font = "55px ara hamah kilania";
-  ctx.fillStyle = "#F6F6F6";
+  ctx.fillStyle = "#000000";
   ctx.textBaseline = "middle";
   ctx.textAlign = "center";
 
