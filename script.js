@@ -4,7 +4,7 @@ const nameInput = document.getElementById("name");
 const downloadBtn = document.getElementById("download-btn");
 
 const image = new Image();
-image.src = "mlm.png";
+image.src = "Gambar WhatsApp 2024-04-08 pukul 20.54.10_50160399.jpg";
 image.onload = function () {
   drawImage();
 };
@@ -14,8 +14,8 @@ image.onload = function () {
 function drawImage() {
   // ctx.clearRect(0, 0, canvas.width, canvas.height)
   ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
-  ctx.font = "55px ara hamah kilania";
-  ctx.fillStyle = "#000000";
+  ctx.font = "30px open sans";
+  ctx.fillStyle = "#FFFFFF";
   ctx.textBaseline = "middle";
   ctx.textAlign = "center";
 
