@@ -24,6 +24,7 @@ function drawImage() {
 
 ctx.fillText(nameInput.value, canvas.height / 2, 232.3);
 }
+
 nameInput.addEventListener("input", function () {
   drawImage();
 });
